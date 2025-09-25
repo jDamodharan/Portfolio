@@ -1,0 +1,311 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Creative Portfolio Design System - Dark Theme with Designer Typography */
+
+@layer base {
+  :root {
+    /* Light Theme (Fallback) */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --surface: 0 0% 98%;
+    
+    /* Creative Brand Palette */
+    --brand-primary: 280 100% 70%; /* Vibrant Purple */
+    --brand-secondary: 195 100% 65%; /* Electric Blue */
+    --brand-accent: 320 100% 75%; /* Hot Pink */
+    --brand-dark: 260 15% 8%; /* Deep Dark */
+    --brand-glow: 280 100% 85%; /* Light Purple Glow */
+    
+    /* System Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark Theme - Primary */
+    --background: 260 15% 8%; /* Deep Dark Background */
+    --foreground: 280 5% 95%; /* Light Text */
+    --surface: 260 10% 12%; /* Surface Elements */
+    
+    /* Dark Cards & Components */
+    --card: 260 10% 12%;
+    --card-foreground: 280 5% 95%;
+    --popover: 260 10% 12%;
+    --popover-foreground: 280 5% 95%;
+    
+    /* Dark System Colors */
+    --primary: 280 100% 70%;
+    --primary-foreground: 260 15% 8%;
+    --secondary: 260 8% 18%;
+    --secondary-foreground: 280 5% 95%;
+    --muted: 260 8% 18%;
+    --muted-foreground: 280 5% 65%;
+    --accent: 260 8% 18%;
+    --accent-foreground: 280 5% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 260 8% 18%;
+    --input: 260 8% 18%;
+    --ring: 280 100% 70%;
+    
+    /* Portfolio Specific Dark */
+    --portfolio-grid: hsl(260 8% 15%);
+    --portfolio-card: hsl(260 10% 12%);
+    --portfolio-hover: hsl(260 8% 18%);
+    
+    /* Creative Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(280 100% 70%), hsl(195 100% 65%));
+    --gradient-card: linear-gradient(145deg, hsl(260 10% 12%), hsl(260 8% 15%));
+    --gradient-hover: linear-gradient(135deg, hsl(280 100% 75%), hsl(195 100% 70%));
+    --gradient-text: linear-gradient(135deg, hsl(280 100% 70%), hsl(195 100% 65%));
+    --gradient-accent: linear-gradient(90deg, hsl(280 100% 70%), hsl(320 100% 75%), hsl(195 100% 65%));
+    
+    /* Glowing Effects */
+    --glow-primary: 0 0 30px hsl(280 100% 70% / 0.5);
+    --glow-secondary: 0 0 40px hsl(195 100% 65% / 0.3);
+    --glow-accent: 0 0 50px hsl(320 100% 75% / 0.4);
+    
+    /* Shadows */
+    --shadow-card: 0 8px 40px hsl(280 100% 70% / 0.1);
+    --shadow-hover: 0 12px 60px hsl(280 100% 70% / 0.2);
+    --shadow-hero: 0 20px 80px hsl(280 100% 70% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Scroll snapping for full-screen sections */
+  .snap-y {
+    scroll-snap-type: y mandatory;
+  }
+  
+  .snap-start {
+    scroll-snap-align: start;
+  }
+  
+  .snap-mandatory {
+    scroll-snap-type: y mandatory;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+/* Creative Typography System */
+@layer components {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-accent {
+    font-family: 'Abril Fatface', serif;
+  }
+  
+  .font-script {
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  .font-body {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  /* Hero Text Background with Animation */
+  .hero-text-bg {
+    position: absolute;
+    font-family: 'Abril Fatface', serif;
+    font-size: clamp(3rem, 10vw, 10rem);
+    font-weight: 900;
+    background: linear-gradient(135deg, hsl(280 100% 70% / 0.08), hsl(195 100% 65% / 0.05));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+    white-space: nowrap;
+    z-index: 0;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+  }
+  
+  /* Portfolio Cards with Glow Effects */
+  .portfolio-card {
+    @apply bg-card rounded-xl overflow-hidden transition-all duration-500 border border-border/50;
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(10px);
+  }
+  
+  .portfolio-card:hover {
+    @apply scale-105;
+    box-shadow: var(--shadow-hover);
+    border-color: hsl(var(--brand-primary) / 0.5);
+  }
+  
+  /* Gradient Text Effects */
+  .gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+  
+  .gradient-accent-text {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+  }
+  
+  /* Background Gradients */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+  
+  /* Glowing Button Effects */
+  .glow-button {
+    position: relative;
+    background: var(--gradient-hero);
+    transition: all 0.3s ease;
+  }
+  
+  .glow-button:hover {
+    box-shadow: var(--glow-primary);
+    transform: translateY(-2px);
+  }
+  
+  .glow-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: var(--gradient-accent);
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .glow-button:hover::before {
+    opacity: 1;
+  }
+
+  /* Scroll Animations */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
+  
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease;
+  }
+  
+  .fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .fade-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease;
+  }
+  
+  .fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Parallax Container */
+  .parallax-container {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .parallax-element {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Creative Decorative Elements */
+  .decorative-dots {
+    background-image: radial-gradient(circle, hsl(var(--brand-primary) / 0.3) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .decorative-grid {
+    background-image: 
+      linear-gradient(hsl(var(--brand-primary) / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--brand-primary) / 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Neon Text Effect */
+  .neon-text {
+    color: hsl(var(--brand-primary));
+    text-shadow: 
+      0 0 5px hsl(var(--brand-primary) / 0.5),
+      0 0 10px hsl(var(--brand-primary) / 0.5),
+      0 0 15px hsl(var(--brand-primary) / 0.5);
+    animation: neon-flicker 2s infinite alternate;
+  }
+  
+  @keyframes neon-flicker {
+    0%, 100% {
+      text-shadow: 
+        0 0 5px hsl(var(--brand-primary) / 0.5),
+        0 0 10px hsl(var(--brand-primary) / 0.5),
+        0 0 15px hsl(var(--brand-primary) / 0.5);
+    }
+    50% {
+      text-shadow: 
+        0 0 2px hsl(var(--brand-primary) / 0.3),
+        0 0 5px hsl(var(--brand-primary) / 0.3),
+        0 0 8px hsl(var(--brand-primary) / 0.3);
+    }
+  }
+}
