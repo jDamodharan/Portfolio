@@ -529,10 +529,65 @@ nav .container {
     font-weight: bold;
 }
 
-/* Contact Section */
-.contact {
-    padding: 100px 0;
-}
+//* Contact Section Styling */
+#contact {
+    padding: 100px 0 120px 0;
+    text-align: center;
+  }
+  
+  #contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    color: var(--brand-primary);
+    font-weight: 700;
+  }
+  
+  .contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .contact-form {
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+  .popup-message {
+    display: none;
+    text-align: center;
+    background-color: #00aaff;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-top: 25px;
+    padding: 12px 15px;
+    animation: fadein 0.5s ease-in-out;
+  }
+  @keyframes fadein {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  
+  /* Add gap before footer */
+  footer {
+    margin-top: 80px;
+  }
+  
+  
+  /* Add subtle top spacing before footer */
+  footer {
+    margin-top: 80px;
+  }
+  
+  /* Optional: smooth section transition */
+  #contact,
+  footer {
+    transition: all 0.3s ease-in-out;
+  }
+  
 
 .contact-content {
     max-width: 800px;
@@ -679,12 +734,42 @@ nav .container {
     margin-top: 4px;
 }
 
-/* Footer */
+/* Footer Styles */
 footer {
-    padding: 60px 0;
-    border-top: 1px solid var(--border);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+/* Footer */
+.footer-top {
+    background-color: #2f2f2f;
+    padding: 30px 0;
+    color: #ccc;
     text-align: center;
-    color: var(--muted);
+    font-size: 16px;
+  }
+  
+  .footer-top a {
+    color: #00aaff;
+    text-decoration: none;
+  }
+  
+  .footer-top a:hover {
+    text-decoration: underline;
+  }
+
+  footer {
+    margin-top: 80px; /* space above footer */
+  }
+  
+
+/* Bottom Section */
+.footer-bottom {
+    background-color: #1c1c1c;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #888;
 }
 
 /* Responsive */
