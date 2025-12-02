@@ -1042,3 +1042,27 @@ footer {
     transform: translateY(0);
 }
 
+/* Apply Experience heading styles to Known Tools header */
+.tools-showcase h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    line-height: 1.05;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: var(--text-primary, #111);
+    /* keep section centered while matching heading look */
+    text-align: center;
+    display: inline-block;
+}
+
+.tools-showcase h2 .gradient-text {
+    background: linear-gradient(90deg, #8B5CF6, #0EA5E9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+/* optional: tighten spacing above tools heading */
+.tools-showcase .section-header { margin-bottom: 8px; }
+

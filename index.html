@@ -39,11 +39,14 @@
                         <strong>stunning visual experiences</strong> through 
                         innovative graphic design and user-centered UI/UX solutions.
                     </p>
-                    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-                        <a href="#works" class="btn btn-primary">View My Work</a>
+
+                    <div class="hero-buttons">
+                        <a href="#works" class="btn btn-primary">View My Works</a>
                         <a href="#contact" class="btn btn-outline">Contact Me</a>
+                        <a href="src/assets/upload/J Damodharan Graphic Designer Resume.pdf" class="btn btn-outline">Resume</a>
                     </div>
                 </div>
+
                 <div class="hero-image fade-in">
                     <div class="profile-img-wrapper">
                         <img src="src/assets/Profile.jpg" alt="Damodharan - Creative Designer">
@@ -323,10 +326,8 @@
     <!-- Design Tools Showcase -->
 <section id="tools" class="tools-showcase">
   <div class="container">
-    <div class="section-header fade-in">
-      <h2>Tools & <span class="gradient-text">Technologies</span></h2>
-      <p>Professional design software I use to create stunning visuals</p>
-    </div>
+    <div class="section-header fade-in"></div>
+    <h2>Known <span class="gradient-text">Tools</span></h2>
 
     <div class="tools-grid">
       <!-- Tool Card -->
@@ -391,6 +392,7 @@
                         <li>Logo Design</li>
                         <li>Brand Identity</li>
                         <li>Marketing Materials</li>
+                        <li>Brochures & Magazines</li>
                         <li>Social Media Graphics</li>
                         <li>Event Posters</li>
                         <li>Card Designs</li>
@@ -481,7 +483,7 @@
         
         <!-- Footer Bottom -->
         <div class="footer-bottom">
-        <p>&copy; 2025 Damodharan. All rights reserved.</p>
+        <p id="footerYear"></p>
         </div>
     </footer>
    
@@ -511,6 +513,10 @@
   });
 </script>
 
+<script>
+/* ---------------- FOOTER YEAR ---------------- */
+document.getElementById("footerYear").textContent = `© ${new Date().getFullYear()} Damodharan. All rights reserved`;
+</script>
 
     <script>
         // Portfolio Data with Multiple Images per Work
@@ -565,7 +571,7 @@
                 title: "Card Designs",
                 category: "Cards",
                 image: "src/assets/ID-card.avif",
-                description: "Professional ID cards & Visiting cards crafted for clarity and elegance",
+                description: "Professional ID cards, Visiting cards & Badges crafted for clarity and elegance",
                 images: [
                     "src/assets/upload/card (1).png",
                     "src/assets/upload/card (2).png",
@@ -594,9 +600,9 @@
             },
             {
                 id: 6,
-                title: "YouTube Thubmnails",
-                category: "Thubmnails",
-                image: "src/assets/youtube-thubmnail.avif",
+                title: "YouTube Thumbnails",
+                category: "Thumbnails",
+                image: "src/assets/youtube-thumbnail.avif",
                 description: "Designed for the spotlight",
                 images: [
                     "src/assets/upload/yt (2).png",
@@ -621,11 +627,21 @@
                 image: "src/assets/uiux-design.avif",
                 description: "Intuitive and visually engaging interface designs focused on user experience.",
                 images: [
-                    "https://via.placeholder.com/800x600/EC4899/FFFFFF?text=Wedding+Setup+1",
-                    "https://via.placeholder.com/800x600/DB2777/FFFFFF?text=Wedding+Setup+2",
-                    "https://via.placeholder.com/800x600/BE185D/FFFFFF?text=Wedding+Setup+3",
-                    "https://via.placeholder.com/800x600/9F1239/FFFFFF?text=Wedding+Setup+4",
-                    "https://via.placeholder.com/800x600/831843/FFFFFF?text=Wedding+Setup+5"
+                    "src/assets/upload/uiux (1).png",
+                    "src/assets/upload/uiux (2).png",
+                    "src/assets/upload/uiux (3).png",
+                    "src/assets/upload/uiux (4).png"
+                ]
+            },
+            {
+                id: 9,
+                title: "Brochure Designs",
+                category: "Brochures",
+                image: "src/assets/Brochure.avif",
+                description: "Informative and visually appealing brochure layouts for effective communication.",
+                images: [
+                    "src/assets/upload/brochure (1).png",
+                    "src/assets/upload/brochure (2).png"
                 ]
             },
             
